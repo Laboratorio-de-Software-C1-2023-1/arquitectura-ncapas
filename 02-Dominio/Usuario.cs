@@ -1,10 +1,13 @@
-﻿namespace _02_Dominio
+﻿using _02_Dominio.ValueObject;
+using System.Text.RegularExpressions;
+
+namespace _02_Dominio
 {
     public class Usuario
     {
-        private String nombre;
-        private String email;
-        private int edad;
+        private Nombre nombre;
+        private Email email;
+        private EdadMayor edad;
 
         public Usuario(
             String nombre,
@@ -12,20 +15,15 @@
             int edad
         )
         {
-
-            if (this.nombre.Length < 4)
-            {
-                throw new Exception("El nombre debe contener, al menos, 4 caractreres");
-            }
-
-            if (this.edad < 18)
-            {
-                throw new Exception("El usuario debe ser mayor a 18 años");
-            }
-
-            this.nombre = nombre;
-            this.email = email;
-            this.edad = edad;
+            this.nombre = new Nombre(nombre);
+            this.email = new Email(email); ;
+            this.edad = new EdadMayor(edad);
         }
+
+        public void cambiarNombre(String nuevoNombre)
+        {
+            this.nombre = new Nombre(nuevoNombre);
+        }
+        
     }
 }
