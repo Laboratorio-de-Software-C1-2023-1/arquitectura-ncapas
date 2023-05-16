@@ -20,7 +20,7 @@ namespace _02_Dominio
         {
             this.id = new Identificador(id);
             this.nombre = new Nombre(nombre);
-            this.email = new Email(email); ;
+            this.email = new Email(email);
             this.edad = new EdadMayor(edad);
         }
 
