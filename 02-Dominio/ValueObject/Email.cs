@@ -13,18 +13,18 @@ namespace _02_Dominio.ValueObject
 
         public Email(String valor)
         {
-            this.DebeTenerSintaxisValida();
+            this.DebeTenerSintaxisValida(valor);
             this.valor = valor;
         }
         public String Valor()
         {
             return this.valor;
         }
-        private void DebeTenerSintaxisValida()
+        private void DebeTenerSintaxisValida(String valor)
         {
             var pattern = @"^[a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
             var regex = new Regex(pattern);
-            if (regex.IsMatch(this.valor))
+            if (!regex.IsMatch(valor))
             {
                 throw new Exception("El email no es válido");
             }

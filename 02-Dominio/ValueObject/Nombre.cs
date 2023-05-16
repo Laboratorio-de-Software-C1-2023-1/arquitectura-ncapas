@@ -12,16 +12,16 @@ namespace _02_Dominio
 
         public Nombre(String valor)
         {
-            this.DebeContenerMasDe4Caracteres();
+            this.DebeContenerMasDe4Caracteres(valor);
             this.valor = valor;
         }
         public String Valor()
         {
             return this.valor;
         }
-        private void DebeContenerMasDe4Caracteres()
+        private void DebeContenerMasDe4Caracteres(String valor)
         {
-            if (this.valor.Length < 4)
+            if (valor.Length < 4)
             {
                 throw new Exception("El nombre debe contener, al menos, 4 caractreres");
             }

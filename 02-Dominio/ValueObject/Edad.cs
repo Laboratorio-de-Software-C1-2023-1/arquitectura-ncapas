@@ -12,16 +12,16 @@ namespace _02_Dominio.ValueObject
 
         public EdadMayor(int valor)
         {
-            this.DebeSerMayorDeEdad();
+            this.DebeSerMayorDeEdad(valor);
             this.valor = valor;
         }
         public int Valor()
         {
             return this.valor;
         }
-        private void DebeSerMayorDeEdad()
+        private void DebeSerMayorDeEdad(int valor)
         {
-            if (this.valor < 18)
+            if (valor < 18)
             {
                 throw new Exception("El usuario debe ser mayor a 18 años");
             }
