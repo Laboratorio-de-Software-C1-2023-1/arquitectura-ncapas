@@ -15,7 +15,8 @@ namespace _00_Presentacion.IoC_Container
         static public IContainer getContainer()
         {
             ContainerBuilder builder = new ContainerBuilder();
-            builder.RegisterType<UsuarioRepositorioEnMemoria>().As<UsuarioRepositorio>().SingleInstance();
+            //builder.RegisterType<UsuarioRepositorioEnMemoria>().As<UsuarioRepositorio>().SingleInstance();
+            builder.RegisterType<UsuarioRepositorioSQLServer>().As<UsuarioRepositorio>().SingleInstance();
             builder.RegisterType<CrearUsuarios>();
             builder.RegisterType<ObtenerUsuarios>();
             IContainer container = builder.Build();
