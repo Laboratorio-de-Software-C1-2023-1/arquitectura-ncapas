@@ -1,4 +1,5 @@
-﻿using _02_Dominio;
+﻿using _01_Aplicacion.DTO;
+using _02_Dominio;
 using _02_Dominio.Repositorio;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,16 @@ namespace _01_Aplicacion
             this.repositorio = repositorio;
         }
 
-        public List<Usuario> ejecutar()
+        public List<UsuarioDTO> ejecutar()
         {
-            return this.repositorio.obtenerTodos();
+            List<Usuario> usuarios = this.repositorio.obtenerTodos();
+            List<UsuarioDTO> usuariosDTO = new List<UsuarioDTO>();
+            foreach (Usuario usuario in usuarios)
+            {
+                UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.Id(), usuario.Nombre(), usuario.Email(), usuario.Edad());
+                usuariosDTO.Add(usuarioDTO);
+            }
+            return usuariosDTO;
         }
     }
 }

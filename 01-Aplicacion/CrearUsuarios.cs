@@ -1,4 +1,5 @@
-﻿using _02_Dominio;
+﻿using _01_Aplicacion.DTO;
+using _02_Dominio;
 using _02_Dominio.Repositorio;
 
 namespace _01_Aplicacion
@@ -12,9 +13,9 @@ namespace _01_Aplicacion
             this.repositorio = repositorio;
         }
 
-        public void ejecutar(Usuario usuario)
+        public void ejecutar(UsuarioDTO usuario)
         {
-            this.repositorio.grabar(usuario);
+            this.repositorio.grabar(new Usuario(usuario.Id(), usuario.Nombre(), usuario.Email(), usuario.Edad()));
         }
 
     }

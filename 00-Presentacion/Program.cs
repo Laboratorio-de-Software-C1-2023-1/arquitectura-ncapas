@@ -1,8 +1,9 @@
 ﻿using _01_Aplicacion;
+using _01_Aplicacion.DTO;
 using _02_Dominio;
 using _03_Infraestructura;
 
-Usuario juan = new Usuario(
+UsuarioDTO juan = new UsuarioDTO(
     Guid.NewGuid(),
     "Juan",
     "juan@test.com",
@@ -21,8 +22,8 @@ ObtenerUsuarios obtenedorDeUsuarios = new ObtenerUsuarios(
     usuarioRepositorio
 );
 
-List<Usuario> todosLosUsuarios = obtenedorDeUsuarios.ejecutar();
-foreach (Usuario usuario in todosLosUsuarios)
+List<UsuarioDTO> todosLosUsuarios = obtenedorDeUsuarios.ejecutar();
+foreach (UsuarioDTO usuario in todosLosUsuarios)
 {
     Console.WriteLine(usuario.presentacion());
 }

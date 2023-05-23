@@ -24,6 +24,23 @@ namespace _02_Dominio
             this.edad = new EdadMayor(edad);
         }
 
+        public Guid Id()
+        {
+            return this.id.Valor();
+        }
+        public String Nombre()
+        {
+            return this.nombre.Valor();
+        }
+        public String Email()
+        {
+            return this.email.Valor();
+        }
+        public int Edad()
+        {
+            return this.edad.Valor();
+        }
+
         public void cambiarNombre(String nuevoNombre)
         {
             this.nombre = new Nombre(nuevoNombre);
