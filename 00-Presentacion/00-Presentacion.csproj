@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\01-Aplicacion\01-Aplicacion.csproj" />
     <ProjectReference Include="..\02-Dominio\02-Dominio.csproj" />
     <ProjectReference Include="..\03-Infraestructura\03-Infraestructura.csproj" />
